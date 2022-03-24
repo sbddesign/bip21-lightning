@@ -7,13 +7,14 @@ if(!args['btc'] || !args['ln']) {
     console.log('Error: missing required args.');
 }
 else {
-    let options = {
-        lightning: args['ln']
-    }
+    let options = {}
 
     if(args['amount']) options.amount = args['amount']
     if(args['name']) options.label = args['name']
     if(args['description']) options.message = args['description']
+    
+    // lightning must go last so that the rest of the message is not
+    options.lightning = args['ln']
     
     const uri = bip21.encode(args['btc'], options)
     
