@@ -9,7 +9,7 @@ if(!args['btc'] || !args['ln']) {
 else {
     let options = {}
 
-    if(args['amount']) options.amount = args['amount']
+    if(args['amt']) options.amount = args['amt']
     if(args['name']) options.label = args['name']
     if(args['description']) options.message = args['description']
     
